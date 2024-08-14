@@ -10,10 +10,10 @@ app.use(bodyParser.json());
 
 // MySQL connection
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'your-username',
-    password: 'your-password',
-    database: 'your-database'
+    host: 'luserdb.c96oeismsbzb.ap-south-1.rds.amazonaws.com',
+    user: 'admin',
+    password: 'cmri1984',
+    database: 'userdb'
 });
 
 db.connect((err) => {
@@ -45,6 +45,7 @@ app.post('/login', (req, res) => {
 });
 
 // Start server
+const PORT = 8080;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
