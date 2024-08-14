@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 // MySQL connection
 const db = mysql.createConnection({
-    host: 'luserdb.c96oeismsbzb.ap-south-1.rds.amazonaws.com',
+    host: 'userdb.c96oeismsbzb.ap-south-1.rds.amazonaws.com',
     user: 'admin',
     password: 'cmri1984',
     database: 'userdb'
@@ -45,7 +45,6 @@ app.post('/login', (req, res) => {
 });
 
 // Start server
-const PORT = 8080;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
